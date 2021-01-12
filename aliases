@@ -10,10 +10,24 @@ alias b="bundle"
 
 # Rails
 alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
+alias s="rails server -b 0.0.0.0"
+alias t="rails test"
+alias tt="rails test && rails test:system"
+# B4B specific
+alias ta="ruby lib/pcs_core/test/scripts/run_all_tests.rb"
+alias tu="ruby lib/pcs_core/test/scripts/run_units.rb"
+alias ti="ruby lib/pcs_core/test/scripts/run_integrations.rb"
+alias tf="ruby lib/pcs_core/test/scripts/run_features.rb"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
+
+#Tmux
+alias sp='tmux splitw -v -p 20'
+alias vsp='tmux split -v -p 50'
+
+# Docker
+alias dcr='docker-compose run'
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then
