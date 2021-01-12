@@ -27,7 +27,8 @@ alias sp='tmux splitw -v -p 20'
 alias vsp='tmux split -v -p 50'
 
 # Docker
-alias dcr='docker-compose run'
+alias dcu='docker-compose up'
+alias dcr='docker-compose run --rm'
 
 # Include custom aliases
 if [[ -f ~/.aliases.local ]]; then
