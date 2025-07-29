@@ -1,0 +1,122 @@
+# Alacritty Configuration
+# Save this as ~/.config/alacritty/alacritty.toml
+
+[window]
+# Window padding (comfortable spacing)
+padding.x = 6
+padding.y = 6
+
+# Window opacity (1.0 = opaque, 0.0 = transparent)
+opacity = 0.95
+
+# Remove window decorations (title bar, etc.)
+decorations = "none"  # Shows title bar for moving/resizing
+
+# Window startup mode
+startup_mode = "windowed"  # or "maximized" or "fullscreen"
+
+[font]
+# Font family - make sure this matches exactly
+normal.family = "JetBrains Mono"
+
+# You can also specify different styles if needed:
+# bold.family = "JetBrains Mono"
+# italic.family = "JetBrains Mono"
+
+# Font size
+size = 11.0
+
+# Enable font ligatures (if using Fira Code)
+# builtin_box_drawing = false
+
+[selection]
+# Automatically copy selection to clipboard
+save_to_clipboard = true
+
+[cursor]
+# Cursor style
+style.shape = "block"  # or "underline" or "beam"
+style.blinking = "off"  # or "on"
+
+# Cursor colors
+# text = "#000000"
+# cursor = "#ffffff"
+
+[colors]
+# Tokyo Night theme (as used in DHH's Omakub)
+[colors.primary]
+background = "#1a1b26"
+foreground = "#c0caf5"
+
+[colors.normal]
+black = "#15161e"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+cyan = "#7dcfff"
+white = "#a9b1d6"
+
+[[keyboard.bindings]]
+# Copy/paste
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+[[keyboard.bindings]]
+# Font size adjustment
+key = "Equals"
+mods = "Control"
+action = "IncreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Minus"
+mods = "Control"
+action = "DecreaseFontSize"
+
+[[keyboard.bindings]]
+key = "Key0"
+mods = "Control"
+action = "ResetFontSize"
+
+[[keyboard.bindings]]
+# Clear screen
+key = "K"
+mods = "Control|Shift"
+action = "ClearHistory"
+
+[[keyboard.bindings]]
+# Vi mode
+key = "Space"
+mods = "Control|Shift"
+action = "ToggleViMode"
+
+[[keyboard.bindings]]
+# New window
+key = "N"
+mods = "Control|Shift"
+action = "SpawnNewInstance"
+
+[[keyboard.bindings]]
+# Quit
+key = "Q"
+mods = "Control|Shift"
+action = "Quit"
+
+[scrolling]
+# Number of lines to scroll when using scroll wheel
+multiplier = 3
+
+# Maximum number of lines in scrollback buffer
+history = 10000
+
+[bell]
+# Disable terminal bell
+animation = "EaseOutExpo"
+duration = 0

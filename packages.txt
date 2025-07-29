@@ -1,0 +1,8 @@
+zsh
+fzf
+ripgrep
+git
+curl
+wget
+build-essential
+command-not-found
