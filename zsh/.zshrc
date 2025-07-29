@@ -111,5 +111,5 @@ esac
 
 export PATH="$HOME/.asdf/shims:$PATH"
 
-. "$HOME/.cargo/env"
+[[ -f ~/.cargo/env ]] && source ~/.cargo/env
 
