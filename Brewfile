@@ -10,7 +10,6 @@ brew "wget"
 cask "alacritty"
 
 # Fonts (if you want to install JetBrains Mono via Homebrew)
-tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono"
 
 # Optional: other useful tools for future
