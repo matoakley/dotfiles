@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -87,6 +84,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# TODO create and import environment.zsh
+export PNPM_HOME="$HOME/.local/share/pnpm"
+
+# Load PATH configuration
+[[ -f ~/.config/zsh/path.zsh ]] && source ~/.config/zsh/path.zsh
+
 # Load custom aliases
 [[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
 
@@ -101,15 +104,4 @@ if [[ -x /usr/lib/command-not-found ]]; then
         return $?
     }
 fi
-
-export PNPM_HOME="$HOME/.local/share/pnpm"
-
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-export PATH="$HOME/.asdf/shims:$PATH"
-
-[[ -f ~/.cargo/env ]] && source ~/.cargo/env
 

@@ -26,15 +26,13 @@ create_symlink() {
 # Get the absolute path to dotfiles directory
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-# Create symlinks
-create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
-create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+# alacritty symlinks
 create_symlink "$DOTFILES_DIR/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
-# Create config directory and symlink aliases if it exists
-if [ -f "$DOTFILES_DIR/zsh/aliases.zsh" ]; then
-    mkdir -p "$HOME/.config/zsh"
-    create_symlink "$DOTFILES_DIR/zsh/aliases.zsh" "$HOME/.config/zsh/aliases.zsh"
-fi
+# zsh symlinks
+create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
+create_symlink "$DOTFILES_DIR/zsh/aliases.zsh" "$HOME/.config/zsh/aliases.zsh"
+create_symlink "$DOTFILES_DIR/zsh/path.zsh" "$HOME/.config/zsh/path.zsh"
 
 echo "🎉 Symlinks created! Backup saved to: $backup_dir"

@@ -6,3 +6,4 @@ curl
 wget
 build-essential
 command-not-found
+neovim
