@@ -12,8 +12,7 @@ cask "alacritty"
 # Fonts (if you want to install JetBrains Mono via Homebrew)
 cask "font-jetbrains-mono"
 
-# Optional: other useful tools for future
-# brew "eza"
-# brew "bat" 
-# brew "zoxide"
+# LazyVim dependencies
+brew "lazygit"
+brew "luarocks"
 brew "neovim"

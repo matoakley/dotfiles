@@ -6,4 +6,6 @@ curl
 wget
 build-essential
 command-not-found
+lazygit
+luarocks
 neovim

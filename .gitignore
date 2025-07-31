@@ -1,0 +1,6 @@
+
+# Neovim - don't track LazyVim runtime data
+nvim/lazy-lock.json
+nvim/.neoconf.json
+nvim/.repro/
+nvim/spell/
