@@ -1,5 +1,18 @@
+# Don't track shell history
+.zsh_history
+*_history
 
-# Neovim - don't track LazyVim runtime data
+# Don't track local overrides
+*.local
+
+# Don't track OS-specific files
+.DS_Store
+Thumbs.db
+
+# Don't track backup directories
+*-backup-*
+
+# Neovim - only exclude problematic runtime files
 nvim/lazy-lock.json
 nvim/.neoconf.json
 nvim/.repro/

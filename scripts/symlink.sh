@@ -29,6 +29,9 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # alacritty symlinks
 create_symlink "$DOTFILES_DIR/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
+# nvim symlinks
+create_symlink "$DOTFILES_DIR/nvim" "$HOME/.config/nvim"
+
 # zsh symlinks
 create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 create_symlink "$DOTFILES_DIR/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
