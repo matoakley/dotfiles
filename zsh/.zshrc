@@ -80,6 +80,7 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	fzf
+  mise
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,8 +101,6 @@ else
   [[ -r ~/.p10k.zsh ]] && source ~/.p10k.zsh
 fi
 
-# User configuration
-
 if [[ -x /usr/lib/command-not-found ]]; then
     function command_not_found_handler() {
         /usr/lib/command-not-found -- "$1"
@@ -109,3 +108,8 @@ if [[ -x /usr/lib/command-not-found ]]; then
     }
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export HOMEBREW_PREFIX=/opt/homebrew
+fi
+
+eval "$(mise activate zsh)"

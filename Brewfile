@@ -5,6 +5,7 @@ brew "ripgrep"
 brew "git"
 brew "curl"
 brew "wget"
+brew "mise"
 
 # Terminal emulator
 cask "alacritty"

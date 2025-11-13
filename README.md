@@ -6,7 +6,7 @@ Personal development environment configuration for Ubuntu and macOS.
 
 - **Zsh** with Oh My Zsh and Powerlevel10k theme
 - **Alacritty** terminal emulator configuration
-- **Essential tools**: fzf, ripgrep, and useful aliases
+- **Essential tools**: fzf, ripgrep, mise, and useful aliases
 - **Cross-platform**: Works on Ubuntu and macOS
 
 ## Quick Start

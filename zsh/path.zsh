@@ -20,12 +20,12 @@ add_to_path "$HOME/bin"
 
 # Development tools
 add_to_path "$HOME/.cargo/bin"
-add_to_path "$HOME/.asdf/shims"
 add_to_path "$PNPM_HOME"
 
 # Mac-specific paths
 if [[ "$OSTYPE" == "darwin"* ]]; then
     add_to_path "/opt/homebrew/bin"
+    add_to_path "/opt/homebrew/sbin"
 fi
     
 # Ubuntu-specific paths
