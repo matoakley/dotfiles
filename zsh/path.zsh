@@ -36,3 +36,4 @@ fi
 unset -f add_to_path
 
 eval "$(direnv hook zsh)"
+eval "$(mise activate zsh --shims)"
