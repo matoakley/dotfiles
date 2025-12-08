@@ -8,3 +8,4 @@ build-essential
 command-not-found
 luarocks
 neovim
+fonts-jetbrains-mono
