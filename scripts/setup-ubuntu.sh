@@ -35,10 +35,13 @@ done < packages.txt
 
 # Set zsh as default shell (if not already set)
 current_shell=$(getent passwd "$USER" | cut -d: -f7)
+shell_changed=false
+
 if [[ "$current_shell" != *"zsh"* ]]; then
     echo "Setting zsh as default shell..."
     chsh -s $(which zsh)
     echo "✅ Shell changed to zsh"
+    shell_changed=true
 else
     echo "zsh is already the default shell ✅"
 fi
@@ -91,16 +94,23 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 echo ""
-echo "✅ Setup complete!"
+echo "✅ Development environment setup complete!"
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "⚠️  IMPORTANT: RESTART YOUR COMPUTER NOW"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo ""
-echo "The shell change requires a full system restart to take effect."
-echo "(Simply restarting the terminal is NOT sufficient)"
-echo ""
-echo "After restarting, open a new terminal to see your configured prompt."
-echo ""
+
+if [[ "$shell_changed" == true ]]; then
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️  IMPORTANT: RESTART YOUR COMPUTER NOW"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "The shell change requires a full system restart to take effect."
+    echo "(Simply restarting the terminal is NOT sufficient)"
+    echo ""
+    echo "After restarting, open a new terminal to see your configured prompt."
+    echo ""
+else
+    echo "All set! Open a new terminal to see any updated configurations."
+    echo ""
+fi
+
 echo "Your old configs have been backed up to ~/.dotfiles-backup-*"
 echo ""
