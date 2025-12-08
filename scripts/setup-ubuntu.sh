@@ -33,12 +33,15 @@ while read -r package; do
     fi
 done < packages.txt
 
-# Set zsh as default shell
-echo "Setting zsh as default shell..."
-chsh -s $(which zsh)
-
-echo ""
-echo "✅ Ubuntu setup complete!"
+# Set zsh as default shell (if not already set)
+current_shell=$(getent passwd "$USER" | cut -d: -f7)
+if [[ "$current_shell" != *"zsh"* ]]; then
+    echo "Setting zsh as default shell..."
+    chsh -s $(which zsh)
+    echo "✅ Shell changed to zsh"
+else
+    echo "zsh is already the default shell ✅"
+fi
 
 # Install mise (not in apt repos)
 if ! command -v mise &> /dev/null; then
@@ -88,7 +91,7 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 echo ""
-echo "✅ Dotfiles setup complete!"
+echo "✅ Setup complete!"
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "⚠️  IMPORTANT: RESTART YOUR COMPUTER NOW"
@@ -97,9 +100,7 @@ echo ""
 echo "The shell change requires a full system restart to take effect."
 echo "(Simply restarting the terminal is NOT sufficient)"
 echo ""
-echo "After restarting:"
-echo "  1. Open a new terminal - it will now use zsh"
-echo "  2. On first launch, run: p10k configure"
+echo "After restarting, open a new terminal to see your configured prompt."
 echo ""
 echo "Your old configs have been backed up to ~/.dotfiles-backup-*"
 echo ""
