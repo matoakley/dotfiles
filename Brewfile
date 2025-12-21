@@ -17,3 +17,7 @@ cask "font-jetbrains-mono"
 brew "lazygit"
 brew "luarocks"
 brew "neovim"
+
+# Terraform
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
