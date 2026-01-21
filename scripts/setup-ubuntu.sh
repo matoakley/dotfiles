@@ -1,6 +1,9 @@
 #!/bin/bash
 echo "📦 Installing Ubuntu packages..."
 
+# Add Neovim official PPA for compatibility with LazyVim
+sudo add-apt-repository ppa:neovim-ppa/unstable
+
 # Update package list
 sudo apt update
 
